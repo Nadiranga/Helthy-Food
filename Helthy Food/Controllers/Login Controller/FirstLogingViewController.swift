@@ -10,10 +10,7 @@ import UIKit
 class FirstLogingViewController: UIViewController {
 
     
-    
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -115,7 +112,7 @@ class FirstLogingViewController: UIViewController {
        
         
         
-        loginBtn.addTarget(self, action: #selector(goToSignUp), for: .touchUpInside)
+        loginBtn.addTarget(self, action: #selector(goToGome), for: .touchUpInside)
        
         loginBtn.centerXAnchor.constraint(equalTo: backgroundImage.centerXAnchor).isActive = true
         loginBtn.centerYAnchor.constraint(equalTo: backgroundImage.centerYAnchor, constant: 100).isActive = true
@@ -125,7 +122,7 @@ class FirstLogingViewController: UIViewController {
         loginBtn.addTarget(self, action: #selector(goToSignUp), for: .touchUpInside)
         
         
-        
+        signUpBtn.addTarget(self, action: #selector(goToSignUp), for: .touchUpInside)
         signUpBtn.topAnchor.constraint(equalTo: loginBtn.bottomAnchor, constant: 20).isActive = true
         signUpBtn.centerXAnchor.constraint(equalTo: backgroundImage.centerXAnchor).isActive = true
         signUpBtn.widthAnchor.constraint(equalToConstant: view.frame.width-50).isActive = true
@@ -133,7 +130,12 @@ class FirstLogingViewController: UIViewController {
     }
 
     @objc func goToSignUp() {
-        let signUp = MainTabBarViewController()
+        let signUp = SignUpViewController()
         navigationController?.pushViewController(signUp, animated: true)
+    }
+    
+    @objc func goToGome() {
+        let home = MainTabBarViewController()
+        navigationController?.pushViewController(home, animated: true)
     }
 }
