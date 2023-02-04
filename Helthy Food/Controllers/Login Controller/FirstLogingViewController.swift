@@ -51,7 +51,7 @@ class FirstLogingViewController: UIViewController {
         userName.layer.borderColor = UIColor.white.cgColor
         userName.layer.borderWidth = 1
         userName.layer.cornerRadius = 10
-        userName.placeholder = " Type User Name"
+        userName.placeholder = "Enter User Name"
         return userName
     }()
     private let userPassword: UITextField = {
@@ -59,7 +59,8 @@ class FirstLogingViewController: UIViewController {
         userPassword.layer.borderColor = UIColor.white.cgColor
         userPassword.layer.borderWidth = 1
         userPassword.layer.cornerRadius = 10
-        userPassword.placeholder = " Type User Name"
+        userPassword.placeholder = "Enter Password"
+        
         return userPassword
     }()
     private let logoImage: UIImageView = {
@@ -76,6 +77,9 @@ class FirstLogingViewController: UIViewController {
         view.addSubview(userName)
         view.addSubview(userPassword)
         view.addSubview(logoImage)
+        
+        userName.textAlignment = NSTextAlignment.center
+        userPassword.textAlignment = NSTextAlignment.center
         
         backgroundImage.translatesAutoresizingMaskIntoConstraints = false
         loginBtn.translatesAutoresizingMaskIntoConstraints = false
@@ -131,11 +135,14 @@ class FirstLogingViewController: UIViewController {
 
     @objc func goToSignUp() {
         let signUp = SignUpViewController()
-        navigationController?.pushViewController(signUp, animated: true)
+        self.show(signUp, sender: self)
+        //navigationController?.pushViewController(signUp, animated: true)
     }
     
     @objc func goToGome() {
         let home = MainTabBarViewController()
-        navigationController?.pushViewController(home, animated: true)
+        self.show(home, sender: self)
+        //self.hidesBottomBarWhenPushed(home, sender: self)
+        //navigationController?.pushViewController(home, animated: true)
     }
 }

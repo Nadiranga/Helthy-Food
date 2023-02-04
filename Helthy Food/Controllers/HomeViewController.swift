@@ -81,9 +81,14 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         return 100
     }
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //
 //        let controller = CustomTableViewCell.init(name: "sssa", bundle: nil).instantiateViewController(withIdentifier: "PreviewViewController") as! PreviewViewController; controller.strSelectedItem = "\(name[indexPath.row])"
 //        self.navigationController?.pushViewController(controller, animated:true)
+        let con = DetailsFoodViewController()
+        con.setData(namer: images[indexPath.row])
+        self.navigationController?.pushViewController(con, animated: true)
+        
     }
 }

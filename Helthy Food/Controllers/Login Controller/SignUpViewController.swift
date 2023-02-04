@@ -35,7 +35,7 @@ class SignUpViewController: UIViewController {
         userName.layer.borderColor = UIColor.white.cgColor
         userName.layer.borderWidth = 1
         userName.layer.cornerRadius = 10
-        userName.placeholder = " Type User Name"
+        userName.placeholder = "Enter First Name"
         return userName
     }()
     private let lastName: UITextField = {
@@ -43,7 +43,7 @@ class SignUpViewController: UIViewController {
         userName.layer.borderColor = UIColor.white.cgColor
         userName.layer.borderWidth = 1
         userName.layer.cornerRadius = 10
-        userName.placeholder = " Type User Name"
+        userName.placeholder = "Enter Last Name"
         return userName
     }()
     private let birthOfDate: UITextField = {
@@ -51,7 +51,7 @@ class SignUpViewController: UIViewController {
         userName.layer.borderColor = UIColor.white.cgColor
         userName.layer.borderWidth = 1
         userName.layer.cornerRadius = 10
-        userName.placeholder = " Type User Name"
+        userName.placeholder = "Enter Birth Date"
         return userName
     }()
     private let address: UITextField = {
@@ -59,7 +59,7 @@ class SignUpViewController: UIViewController {
         userName.layer.borderColor = UIColor.white.cgColor
         userName.layer.borderWidth = 1
         userName.layer.cornerRadius = 10
-        userName.placeholder = " Type User Name"
+        userName.placeholder = "Enter Address"
         return userName
     }()
     private let email: UITextField = {
@@ -67,7 +67,7 @@ class SignUpViewController: UIViewController {
         userName.layer.borderColor = UIColor.white.cgColor
         userName.layer.borderWidth = 1
         userName.layer.cornerRadius = 10
-        userName.placeholder = " Type User Name"
+        userName.placeholder = "Enter Email Address"
         return userName
     }()
 
@@ -81,6 +81,11 @@ class SignUpViewController: UIViewController {
     view.addSubview(address)
     view.addSubview(email)
     
+    firstName.textAlignment = NSTextAlignment.center
+    lastName.textAlignment = NSTextAlignment.center
+    birthOfDate.textAlignment = NSTextAlignment.center
+    address.textAlignment = NSTextAlignment.center
+    email.textAlignment = NSTextAlignment.center
     
     backgroundImage.translatesAutoresizingMaskIntoConstraints = false
     registerBtn.translatesAutoresizingMaskIntoConstraints = false
