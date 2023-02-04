@@ -30,7 +30,7 @@ class FavouriteViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .systemBackground
-        title = "Most Used Items"
+        title = "Favourite Foods"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .always
         tableView.dataSource = self

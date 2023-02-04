@@ -11,12 +11,13 @@ class HeroHeaderUIView: UIView {
     
     
 
-    private let discriptionLable: UILabel = {
-        let label = UILabel()
-        label.text = "Welcome"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+//    private let discriptionLable: UILabel = {
+//        let label = UILabel()
+//        label.text = "WELCOME"
+//        label.font = label.font.withSize(50)
+//        label.translatesAutoresizingMaskIntoConstraints = false
+//        return label
+//    }()
     
     
     private let heroImageView: UIImageView = {
@@ -37,16 +38,16 @@ class HeroHeaderUIView: UIView {
     }
 
     private func applyingConstraint(){
-        let moreConstraints = [
-            discriptionLable.centerXAnchor.constraint(equalTo: centerXAnchor),
-            discriptionLable.centerYAnchor.constraint(equalTo: centerYAnchor),
-            
-        ]
+//        let moreConstraints = [
+//            discriptionLable.centerXAnchor.constraint(equalTo: centerXAnchor),
+//            discriptionLable.centerYAnchor.constraint(equalTo: centerYAnchor),
+//
+//        ]
         
 
         
         
-        NSLayoutConstraint.activate(moreConstraints)
+       // NSLayoutConstraint.activate(moreConstraints)
      
         }
     
@@ -56,7 +57,7 @@ class HeroHeaderUIView: UIView {
         super.init(frame: frame)
         addSubview(heroImageView)
         addGradient()
-        addSubview(discriptionLable)
+       // addSubview(discriptionLable)
         applyingConstraint()
         
        
