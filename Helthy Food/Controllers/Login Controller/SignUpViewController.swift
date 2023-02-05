@@ -149,7 +149,8 @@ class SignUpViewController: UIViewController {
     }
     @objc func goToSignUp() {
         let signUp = FirstLogingViewController()
-        navigationController?.pushViewController(signUp, animated: true)
+       // navigationController?.pushViewController(signUp, animated: true)
+        self.show(signUp, sender: self)
     }
 
 }

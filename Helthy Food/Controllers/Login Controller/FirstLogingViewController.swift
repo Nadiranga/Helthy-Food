@@ -51,7 +51,7 @@ class FirstLogingViewController: UIViewController {
         userName.layer.borderColor = UIColor.white.cgColor
         userName.layer.borderWidth = 1
         userName.layer.cornerRadius = 10
-        userName.placeholder = "Enter User Name"
+        userName.placeholder = "Enter User Password"
         return userName
     }()
     private let userPassword: UITextField = {
@@ -59,7 +59,7 @@ class FirstLogingViewController: UIViewController {
         userPassword.layer.borderColor = UIColor.white.cgColor
         userPassword.layer.borderWidth = 1
         userPassword.layer.cornerRadius = 10
-        userPassword.placeholder = "Enter Password"
+        userPassword.placeholder = "Enter Name"
         
         return userPassword
     }()
