@@ -10,7 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
     
     
-    var name = ["Chicken Deval", "Tuna Fish Deval", "Orange", "Hoppers", "Fried Rice", "Noodles", "Vegetables"]
+    var name = ["Chicken Deval", "Tuna Fish Deval", "Sosage Pizza", "Hoppers", "Fried Rice", "Noodles", "Vegetables"]
     var sub = ["Fat , Protein , Minerals", "Vitamins", "Fat", "Minerals", "Minerals", "Minerals", "Minerals"]
     var images = ["ff1","ff2", "ff3","ff4", "ff5", "ff6", "ff7"]
     
@@ -87,7 +87,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 //        let controller = CustomTableViewCell.init(name: "sssa", bundle: nil).instantiateViewController(withIdentifier: "PreviewViewController") as! PreviewViewController; controller.strSelectedItem = "\(name[indexPath.row])"
 //        self.navigationController?.pushViewController(controller, animated:true)
         let con = DetailsFoodViewController()
-        con.setData(namer: images[indexPath.row])
+        con.setData(namer: images[indexPath.row], title: name[indexPath.row])
         self.navigationController?.pushViewController(con, animated: true)
         
     }

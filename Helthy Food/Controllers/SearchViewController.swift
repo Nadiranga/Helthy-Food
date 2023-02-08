@@ -11,9 +11,9 @@ class SearchViewController: UIViewController {
     
     
     
-    var name = ["Chicken Deval", "Apple", "Orange", "Hoppers", "Fried Rice", "Noodles", "Vegetables"]
-    var sub = ["Fat , Protein , Minerals", "Vitamins", "Fat", "Minerals", "Minerals", "Minerals", "Minerals"]
-    var images = ["ff1","ff2", "ff3","ff4", "ff5", "ff6", "ff7"]
+    var name = ["Tuna Fish Devil"]
+    var sub = ["Fat , Protein , Minerals"]
+    var images = ["ff2"]
     
     
     private let tableView: UITableView = {

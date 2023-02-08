@@ -6,17 +6,21 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         setUpConstraints()
         
     }
     
     private let backgroundImage: UIImageView = {
         let backgound = UIImageView()
+        
         backgound.image = UIImage(named: "bck")
         return backgound
     }()
@@ -24,8 +28,9 @@ class SignUpViewController: UIViewController {
     private let registerBtn: UIButton = {
         let registerBtn = UIButton()
         registerBtn.setTitle("REGISTER", for: .normal)
+        registerBtn.backgroundColor = .black
         registerBtn.layer.borderColor = UIColor.white.cgColor
-        registerBtn.layer.borderWidth = 1
+       // registerBtn.layer.borderWidth = 1
         registerBtn.layer.cornerRadius = 10
         
         return registerBtn
@@ -33,7 +38,7 @@ class SignUpViewController: UIViewController {
     private let firstName: UITextField = {
         let userName = UITextField()
         userName.layer.borderColor = UIColor.white.cgColor
-        userName.layer.borderWidth = 1
+        userName.backgroundColor = .secondarySystemBackground
         userName.layer.cornerRadius = 10
         userName.placeholder = "Enter First Name"
         return userName
@@ -41,7 +46,7 @@ class SignUpViewController: UIViewController {
     private let lastName: UITextField = {
         let userName = UITextField()
         userName.layer.borderColor = UIColor.white.cgColor
-        userName.layer.borderWidth = 1
+        userName.backgroundColor = .secondarySystemBackground
         userName.layer.cornerRadius = 10
         userName.placeholder = "Enter Last Name"
         return userName
@@ -49,7 +54,7 @@ class SignUpViewController: UIViewController {
     private let birthOfDate: UITextField = {
         let userName = UITextField()
         userName.layer.borderColor = UIColor.white.cgColor
-        userName.layer.borderWidth = 1
+        userName.backgroundColor = .secondarySystemBackground
         userName.layer.cornerRadius = 10
         userName.placeholder = "Enter Birth Date"
         return userName
@@ -57,19 +62,21 @@ class SignUpViewController: UIViewController {
     private let address: UITextField = {
         let userName = UITextField()
         userName.layer.borderColor = UIColor.white.cgColor
-        userName.layer.borderWidth = 1
+        userName.backgroundColor = .secondarySystemBackground
         userName.layer.cornerRadius = 10
-        userName.placeholder = "Enter Address"
+        userName.placeholder = "Enter Password"
         return userName
     }()
     private let email: UITextField = {
         let userName = UITextField()
         userName.layer.borderColor = UIColor.white.cgColor
-        userName.layer.borderWidth = 1
+        userName.backgroundColor = .secondarySystemBackground
         userName.layer.cornerRadius = 10
         userName.placeholder = "Enter Email Address"
         return userName
     }()
+    
+    
 
    func setUpConstraints() {
     

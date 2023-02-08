@@ -12,10 +12,15 @@ class FirstLogingViewController: UIViewController {
     
 
     override func viewDidLoad() {
+        
+       
         super.viewDidLoad()
-
+        view.backgroundColor = .systemBackground
         setUpConstraints()
       
+        
+        
+        
     }
     
    
@@ -29,19 +34,21 @@ class FirstLogingViewController: UIViewController {
     }()
     private let loginBtn: UIButton = {
         let loginBtn = UIButton()
-        loginBtn.setTitle("LOGIN", for: .normal)
-        loginBtn.layer.borderColor = UIColor.white.cgColor
-        loginBtn.layer.borderWidth = 1
+        loginBtn.setTitle("Sign In", for: .normal)
+        loginBtn.backgroundColor = .black
+        //loginBtn.layer.borderColor = UIColor.white.cgColor
+        //loginBtn.layer.borderWidth = 1
         loginBtn.layer.cornerRadius = 10
         
         return loginBtn
     }()
     private let signUpBtn: UIButton = {
         let signUpBtn = UIButton()
-        signUpBtn.setTitle("SIGN UP", for: .normal)
-        signUpBtn.layer.borderColor = UIColor.white.cgColor
-        signUpBtn.layer.borderWidth = 1
-        signUpBtn.layer.cornerRadius = 10
+        signUpBtn.setTitle("New User? Create Account.", for: .normal)
+        signUpBtn.layer.borderColor = nil
+        signUpBtn.tintColor = .white
+        //signUpBtn.layer.borderWidth = 1
+        //signUpBtn.layer.cornerRadius = 10
         
         return signUpBtn
     }()
@@ -49,17 +56,19 @@ class FirstLogingViewController: UIViewController {
     private let userName: UITextField = {
         let userName = UITextField()
         userName.layer.borderColor = UIColor.white.cgColor
-        userName.layer.borderWidth = 1
+       userName.backgroundColor = .secondarySystemBackground
+        //userName.layer.borderWidth = 1
         userName.layer.cornerRadius = 10
         userName.placeholder = "Enter User Password"
         return userName
     }()
     private let userPassword: UITextField = {
         let userPassword = UITextField()
+    
         userPassword.layer.borderColor = UIColor.white.cgColor
-        userPassword.layer.borderWidth = 1
+        userPassword.backgroundColor = .secondarySystemBackground
         userPassword.layer.cornerRadius = 10
-        userPassword.placeholder = "Enter Name"
+        userPassword.placeholder = "Enter User Name"
         
         return userPassword
     }()
@@ -127,7 +136,7 @@ class FirstLogingViewController: UIViewController {
         
         
         signUpBtn.addTarget(self, action: #selector(goToSignUp), for: .touchUpInside)
-        signUpBtn.topAnchor.constraint(equalTo: loginBtn.bottomAnchor, constant: 20).isActive = true
+        signUpBtn.topAnchor.constraint(equalTo: loginBtn.bottomAnchor, constant: 5).isActive = true
         signUpBtn.centerXAnchor.constraint(equalTo: backgroundImage.centerXAnchor).isActive = true
         signUpBtn.widthAnchor.constraint(equalToConstant: view.frame.width-50).isActive = true
         signUpBtn.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -135,14 +144,21 @@ class FirstLogingViewController: UIViewController {
 
     @objc func goToSignUp() {
         let signUp = SignUpViewController()
-        self.show(signUp, sender: self)
+        self.navigationController?.pushViewController(signUp, animated: true)
         //navigationController?.pushViewController(signUp, animated: true)
     }
     
-    @objc func goToGome() {
+    @objc private func goToGome() {
         let home = MainTabBarViewController()
-        self.show(home, sender: self)
-        //self.hidesBottomBarWhenPushed(home, sender: self)
-        //navigationController?.pushViewController(home, animated: true)
+        home.modalPresentationStyle = .fullScreen
+        self.present(home, animated: false , completion: nil)
+      
     }
+    
+    // self.show(home, sender: self)
+     //self.hidesBottomBarWhenPushed(home, sender: self)
+     //navigationController?.pushViewController(home, animated: true)
 }
+
+
+
